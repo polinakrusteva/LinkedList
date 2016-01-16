@@ -1,13 +1,11 @@
 #ifndef NODE
 #define NODE
 #include<iostream>
-//декларация на template-ен клас Node
+
 template <typename T>
 class Node {
 public:
-	//конструктор с 3 параметъра: стойност и два указателя съответно към предишния и следващия Node
 	Node(const T&, Node<T>*, Node<T>*);
-	//get и set методи за улеснение на достъпа и работата с отделните Node-ове
 	T getVal();
 	Node<T>* getPrevious();
 	Node<T>* getNext();
