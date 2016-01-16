@@ -19,7 +19,6 @@ int main()
 	list2.push_front(515);
 	list2.push_front(313);
 	list2.push_back(777);
-	//Извежда 313 515 616 777
 	for (List<int>::iterator it = list2.begin(); it != list2.end(); it++)
 	{
 		std::cout << *it << " ";
@@ -30,7 +29,6 @@ int main()
 	list3.push_back("vici");
 	List<std::string>::iterator iter = list3.begin();
 	list3.insert(iter, "Veni");
-	//Извежда Veni vidi vici
 	for (List<std::string>::iterator it = list3.begin(); it != list3.end(); it++)
 	{
 		std::cout << *it << " ";
@@ -40,7 +38,6 @@ int main()
 	list4.push_back("Divide");
 	list4.push_back("et");
 	list4.push_back("impera");
-	//Извежда Divide et impera
 	for (List<std::string>::iterator it = list4.begin(); it != list4.end(); it++)
 	{
 		std::cout << *it << " ";
@@ -48,7 +45,6 @@ int main()
 	List<std::string>::iterator mid = ++list4.begin();
 	list4.erase(mid);
 	std::cout << std::endl;
-	//Извежда Divide impera
 	for (List<std::string>::iterator it = list4.begin(); it != list4.end(); it++)
 	{
 		std::cout << *it << " ";
