@@ -1,58 +1,50 @@
 #ifndef LIST
 #define LIST
 #include "Node.h"
-//декларация на template-ен клас List
+
 template <typename T>
 class List
 {
 public:
-	//default-ен конструктор
 	List();
-	//copy конструктор
+	
 	List(const List&);
-	//деструктор
+	
 	~List();
-	//добавяне на елемент в началото на списъка
+	
 	void push_front(const T& val);
-	//добавяне на елемент в края на списъка
+	
 	void push_back(const T& val);
-	//премахване на елемент от началото на списъка
+	
 	void pop_front();
-	//премахване на елемент от края на списъка
+	
 	void pop_back();
-	//връща стойността на елемента в началото на списъка
+	
 	T front();
-	//връща стойността на елемента в края на списъка
+	
 	T back();
-	//връща броя елементи в списъка
+	
 	int get_size() const;
-	//изтрива всички елементи на списъка
+	
 	void clear();
-	//проверява дали списъка е празен
+	
 	bool empty();
-	//клас Iterator за лесно обхождане на двусвързания списък
+	
 	class iterator{
 	public:
-		//конструктор с параметър указател към Node
 		iterator(Node<T>*);
-		//предефиниране на операторите *, ++(), ++(int), !=
 		T operator*();
 		iterator operator++();
 		iterator operator++(int);
 		bool operator!=(iterator);
-		//get и set методи за работа с текущия Node
 		Node<T>* getCurrent();
 		void setCurrent(Node<T>*);
 	private:
 		Node<T>* current;
 	};
-	//връща iterator към началото на списъка
 	iterator begin() const;
-	//връща iterator към края на списъка
 	iterator end() const;
-	//вмъква елемент на позиция iterator
 	void insert(iterator&, const T&);
-	//изтрива елемент от позиция iterator
 	void erase(iterator&);
 private:
 	Node<T>* pFront;
